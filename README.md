@@ -2,14 +2,14 @@
 
 Added below 2 files which can be used to help the issue reprocution
 
-  - src/index.js
-  - README .md
+  - **src/index.js**
+  - **README .md**
 
 1. Installed eslint extension(`dbaeumer.vscode-eslint`)
 
 2. Install eslint using npm `npm install eslint`
 
-3. Added eslint extension related settings in the [`code-worksdpace`] json
+3. Added eslint extension related settings in the workspace setting `.code-workspace`  ( see at the end of the file )
    
 ```json
 {
