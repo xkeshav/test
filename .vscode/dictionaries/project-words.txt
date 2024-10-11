@@ -1,3 +1,7 @@
+autofetch
+CODEOWNERS
+dbaeumer
+esbenp
 projectx
 smishing
 vishing

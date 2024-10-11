@@ -1,114 +1,58 @@
-# Template Repository
+# Sample repo to reproduce the issue
 
-![Template][template]
-![License][license]
-![Open Issues][issues]
-![Commit Count][commits]
-![Total Pull Request][PR]
+Added 2 files; a test.js and README .md
 
-This is a template repository which contains
+1. Installed eslint extension(`dbaeumer.vscode-eslint`)
 
-- community health files under mostly under `.github`
-- _package.json_ boilerplate
-- github action under `.github/workflows` for markdown file validity
-- `.vscode` folder which have
-  - code snippets
-  - user / workspace settings file
-  - recommended extensions
-  - project dictionaries
+2. Install eslint using npm `npm install eslint`
 
-## Pre-requisite
+3. Added eslint extension related settings in the [`settings.json`](/home/codespace/.vscode-remote/data/Machine/settings.json)
 
-- Node 18+
-- VS Code IDE
-
-## How to use this Template repository
-
-- Open this [repository][repo] in GitHub
-- Click on `use this template` tab; near _star_ tab
-- Make necessary changes in
-  - _package.json_
-    - replace _template_ with your project name.
-  - markdown files under _.github_ folder
-    - change contact email address and url wherever required.
-
-## Folder Tree
-
-<details>
-<summary>
-  <mark>Repository Folder Structure</mark>
-</summary>
-
-```txt
-├── .editorconfig
-├── .github
-│   ├── CODEOWNERS
-│   ├── CODE_OF_CONDUCT.md
-│   ├── CONTRIBUTING.md
-│   ├── DISCUSSION_TEMPLATE
-│   │   ├── announcements.yml
-│   │   └── ideas.yml
-│   ├── FUNDING.yml
-│   ├── ISSUE_TEMPLATE
-│   │   ├── BUG_FORM.yml
-│   │   ├── ENHANCEMENT.yml
-│   │   ├── FEATURE_REQUEST.md
-│   │   ├── QUESTION.md
-│   │   └── config.yml
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   ├── SECURITY.md
-│   ├── SUPPORT.md
-│   └── workflows
-│       └── markdown-lint.yml
-├── .gitignore
-├── .vscode
-│   ├── cspell.json
-│   ├── dictionaries
-│   │   ├── project-words.txt
-│   │   └── team-member.txt
-│   ├── extensions.json
-│   ├── javascriptreact.json
-│   ├── markdownlint.json
-│   ├── pkg.json
-│   ├── settings.json
-│   ├── tasks.json
-│   └── template.code-snippets
-├── CHANGELOG.md
-├── LICENSE
-├── README.md
-├── docs
-│   └── README.md
-├── package.json
-├── public
-│   └── assets
-│       └── images
-├── src
-│   └── index.js
-├── template.code-workspace
-└── tree
-12 directories, 36 files
-
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "eslint.useFlatConfig": true,
+  "eslint.validate": ["mdx", "javascript", "typescript"],
+  "eslint.options": {
+    "extensions": [".js", ".md"]
+  }
+}
 ```
 
-</details>
+4. Use `Ctrl+S` on markdown or js file
+5. Open the _Output_ Panel in Bottom
+6. Select _EsLint_ and _Extension Host(Remote)_ section from right side drop down
 
----
+below are the logs
 
-## License
+### in `Extension Host(Remote)` section
 
-This project is licensed under the [MIT License](LICENSE).
+```log
+- 'extensions' has been removed.
+    at ae (/home/codespace/.vscode-remote/extensions/dbaeumer.vscode-eslint-3.0.10/client/out/extension.js:1:41596)
+    at re (/home/codespace/.vscode-remote/extensions/dbaeumer.vscode-eslint-3.0.10/client/out/extension.js:1:39556)
+    at Immediate.<anonymous> (/home/codespace/.vscode-remote/extensions/dbaeumer.vscode-eslint-3.0.10/client/out/extension.js:1:35850)
+    at processImmediate (node:internal/timers:483:21)
+```
 
----
+## in `Eslint` Section
 
-> [!Caution]
-> Please update the readme and package.json as per your project.
-> Make sure to remove or update the _CODEOWNERS_ file.
+```log
+[Error - 8:20:37 AM] An unexpected error occurred:
+[Error - 8:20:37 AM] Error: Invalid Options:
+- Unknown options: extensions
+- 'extensions' has been removed.
+    at processOptions (/workspaces/test/node_modules/eslint/lib/eslint/eslint-helpers.js:847:15)
+    at new ESLint (/workspaces/test/node_modules/eslint/lib/eslint/eslint.js:447:34)
+    at O (/home/codespace/.vscode-remote/extensions/dbaeumer.vscode-eslint-3.0.10/server/out/eslintServer.js:1:19181)
+    at async M (/home/codespace/.vscode-remote/extensions/dbaeumer.vscode-eslint-3.0.10/server/out/eslintServer.js:1:19777)
+```
 
-<!-- References -->
+Hope it will help.
 
-[template]: https://badgen.net/static/github/test?icon=github
-[repo]: https://github.com/xkeshav/test
-[license]: https://badgen.net/github/license/xkeshav/test
-[issues]: https://badgen.net/github/open-issues/xkeshav/test
-[PR]: https://badgen.net/github/prs/xkeshav/test
-[commits]: https://badgen.net/github/commits/xkeshav/test/main?color=green
+Thanks,
+Keshav
