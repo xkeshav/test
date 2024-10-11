@@ -1,6 +1,9 @@
 # Sample repo to reproduce the issue
 
-Added 2 files; a test.js and README .md
+Added below 2 files which can be used to help the issue reprocution
+
+  - src/index.js
+  - README .md
 
 1. Installed eslint extension(`dbaeumer.vscode-eslint`)
 
