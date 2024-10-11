@@ -6,8 +6,8 @@ Added 2 files; a test.js and README .md
 
 2. Install eslint using npm `npm install eslint`
 
-3. Added eslint extension related settings in the [`settings.json`](/home/codespace/.vscode-remote/data/Machine/settings.json)
-
+3. Added eslint extension related settings in the [`code-worksdpace`] json
+   
 ```json
 {
   "editor.codeActionsOnSave": {
