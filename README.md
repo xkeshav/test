@@ -106,9 +106,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 <!-- References -->
 
-[template]: https://badgen.net/static/github/template?icon=github
-[repo]: https://github.com/xkeshav/template
-[license]: https://badgen.net/github/license/xkeshav/template
-[issues]: https://badgen.net/github/open-issues/xkeshav/template
-[PR]: https://badgen.net/github/prs/xkeshav/template
-[commits]: https://badgen.net/github/commits/xkeshav/template/main?color=green
+[template]: https://badgen.net/static/github/test?icon=github
+[repo]: https://github.com/xkeshav/test
+[license]: https://badgen.net/github/license/xkeshav/test
+[issues]: https://badgen.net/github/open-issues/xkeshav/test
+[PR]: https://badgen.net/github/prs/xkeshav/test
+[commits]: https://badgen.net/github/commits/xkeshav/test/main?color=green
