@@ -1,16 +1,18 @@
 # Sample repo to reproduce the issue
 
-Added below 2 files which can be used to help the issue reprocution
+[issue detail](https://github.com/microsoft/vscode-eslint/issues/1931)
 
-  - **src/index.js**
-  - **README .md**
+Added below 2 files which can be used to help the issue reproduction
+
+- **src/index.js**
+- **README .md**
 
 1. Installed eslint extension(`dbaeumer.vscode-eslint`)
 
-2. Install eslint using npm `npm install eslint`
+2. Install eslint globally `npm install eslint -g`
 
-3. Added eslint extension related settings in the workspace setting `.code-workspace`  ( see at the end of the file )
-   
+3. Added eslint extension related settings in the workspace setting `.code-workspace` ( see at the end of the file )
+
 ```json
 {
   "editor.codeActionsOnSave": {
@@ -32,7 +34,7 @@ Added below 2 files which can be used to help the issue reprocution
 
 below are the logs
 
-### in `Extension Host(Remote)` section
+## in `Extension Host(Remote)` section
 
 ```log
 - 'extensions' has been removed.
@@ -56,6 +58,3 @@ below are the logs
 ```
 
 Hope it will help.
-
-Thanks,
-Keshav
